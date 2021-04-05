@@ -59,7 +59,7 @@ sw_itemvoid:
 sw_itemvoid::::::::::::::: OVHD, ELEC. PANEL & EFB, GROUND SE. :::
 sw_item_c:\white\BATTERY\grey\, GUARD CLOSED|CHECKED:(sim/cockpit2/electrical/battery_on[0]:1)&&(laminar/B738/button_switch/cover_position[2]:0)&&(sim/operation/failures/rel_batter0:0)
 sw_item_c:\white\STANDBY POWER\grey\, GUARD CLOSED|CHECKED:(sim/cockpit2/electrical/battery_on[0]:1)&&(laminar/B738/button_switch/cover_position[3]:0)&&(sim/operation/failures/rel_batter1:0)
-sw_itemvoid_c:\grey\.............. IF GPU and ASU available 
+sw_itemvoid_c:\grey\.............. IF GPU and ASU available
 sw_item_c:\white\GPU GROUND SERVICE\grey\, CONNECTED|SET:(laminar/B738/fmod/gpu_deployed:1)||(sim/cockpit/electrical/gpu_amps:>0)&&(sim/operation/failures/rel_ex_power_on:0)
 sw_item_c:\white\AC GROUND POWER\grey\, ON|SET:(sim/cockpit/electrical/gpu_amps:>0)&&(sim/operation/failures/rel_ex_power_on:0)
 sw_itemvoid_c:\grey\.............. IF NO GPU AVAILABLE
