@@ -2,10 +2,11 @@
 sw_define_colour:white:0.9,0.9,0.9
 sw_define_colour:grey:0.6,0.6,0.6
 ################################################################################################################
-sw_checklist: VERSION 9.0 BY VIN_KAIZEN FROM 13TH JUNE 2020
+sw_checklist: VERSION 1.0 modified by @anothergene
 ################################################################################################################
 sw_itemvoid_c:\white\        Based on the below, but stripped down to just do what I need it to.
 sw_itemvoid_c:\white\                             Modified by @anothergene
+sw_itemvoid_c:\white\                 VERSION 9.0 BY VIN_KAIZEN FROM 13TH JUNE 2020
 sw_itemvoid_c:\white\                   REAL 737 FULL FLIGHT PROCEDURES CHECKLIST
 sw_itemvoid_c:\grey\                        FOR ZIBO V3.42.9 & XCHECKLIST 1.40
 sw_itemvoid_c:\grey\                   SPECIAL THANKS TO BADMANNEN (RL737 PILOT)
@@ -49,25 +50,30 @@ sw_item_c:\white\launch ATC sofware (Aurora for IVAO or xPilot for VATSIM)
 sw_item_c:\white\find flight in ACARS
 sw_item_c:\white\Launch Self Loading Cargo
 
-sw_itemvoid::::::::::::::::::: tablet :::::::::::::::::::::::::::::::::::::::
-
 ################################################################################################################
-sw_checklist:PRELIMINARY FLIGHTDECK PROCEDURE (1/3):PRELIMINARY FLIGHTDECK PROCEDURE (1/3)
+sw_checklist:PRELIMINARY FLIGHTDECK PROCEDURE (1/3):Power up and config (1/3)
 ################################################################################################################
 
 sw_itemvoid:
-sw_itemvoid::::::::::::::: OVHD, ELEC. PANEL & EFB, GROUND SE. :::
+sw_itemvoid::::::::::::::: Initial Power Up :::
 sw_item_c:\white\BATTERY\grey\, GUARD CLOSED|CHECKED:(sim/cockpit2/electrical/battery_on[0]:1)&&(laminar/B738/button_switch/cover_position[2]:0)&&(sim/operation/failures/rel_batter0:0)
 sw_item_c:\white\STANDBY POWER\grey\, GUARD CLOSED|CHECKED:(sim/cockpit2/electrical/battery_on[0]:1)&&(laminar/B738/button_switch/cover_position[3]:0)&&(sim/operation/failures/rel_batter1:0)
+sw_item_c:\white\DOME WHITE\grey\, BRIGHT, DIM OR OFF|AS NEEDED:(laminar/B738/toggle_switch/cockpit_dome_pos:1)||(laminar/B738/toggle_switch/cockpit_dome_pos:-1)
+sw_item_c:\white\ELECTRIC HYDRAULIC PUMPS A & B\grey\, OFF|CHECKED:(laminar/B738/toggle_switch/electric_hydro_pumps1_pos:0)&&(laminar/B738/toggle_switch/electric_hydro_pumps2_pos:0)
+sw_item_c:\white\LANDING GEAR LEVER\grey\, DOWN|CHECKED:laminar/B738/controls/gear_handle_down:1
+sw_item_c:\white\GEAR STATUS LIGHTS\grey\, 3+3 GREEN (MCP & OVHT)|CHECKED
+sw_item_c:\white\BUS TRANSFER\grey\, GUARD CLOSED|CHECKED:(sim/cockpit2/electrical/cross_tie:1)&&(laminar/B738/button_switch/cover_position[6]:0)
 sw_itemvoid_c:\grey\.............. IF GPU and ASU available
 sw_item_c:\white\GPU GROUND SERVICE\grey\, CONNECTED|SET:(laminar/B738/fmod/gpu_deployed:1)||(sim/cockpit/electrical/gpu_amps:>0)&&(sim/operation/failures/rel_ex_power_on:0)
+sw_item_c:\white\ASU GROUND SERVICE\grey\, CONNECTED|
 sw_item_c:\white\AC GROUND POWER\grey\, ON|SET:(sim/cockpit/electrical/gpu_amps:>0)&&(sim/operation/failures/rel_ex_power_on:0)
 sw_itemvoid_c:\grey\.............. IF NO GPU AVAILABLE
+sw_item_c:\white\AFT FUEL PUMP 1\grey\, ON|SET:(laminar/B738/fuel/fuel_tank_pos_lft2:1)
 sw_item_c:\white\APU\grey\, STARTED (1 MINUTE LOADLESS)|AS NEEDED:(sim/cockpit/engine/APU_running:1)||(sim/cockpit/electrical/gpu_amps:>0)&&(sim/operation/failures/rel_ex_power_on:0)||(sim/cockpit2/switches/navigation_lights_on:1)&&(sim/cockpit2/switches/strobe_lights_on:0)&&(sim/operation/failures/rel_lites_nav:0)
 sw_item_c:\white\MIDDLE APU GENERATORS\grey\, ON|AS NEEDED:(sim/cockpit2/electrical/APU_generator_on:1)&&(laminar/B738/electrical/apu_power_bus1:1)&&(laminar/B738/electrical/apu_power_bus2:1)&&(laminar/B738/annunciator/source_off1:0)&&(laminar/B738/annunciator/source_off2:0)||(sim/cockpit/electrical/gpu_amps:>0)&&(sim/operation/failures/rel_ex_power_on:0)||(sim/cockpit2/switches/navigation_lights_on:1)&&(sim/cockpit2/switches/strobe_lights_on:0)&&(sim/operation/failures/rel_lites_nav:0)
 
 sw_itemvoid:
-sw_itemvoid:::::::::::::::: Lighthing :::::::::::
+sw_itemvoid:::::::::::::::: Flight Deck Lighthing :::::::::::
 sw_item_c:\white\EMERGENCY EXIT LIGHTS\grey\, GUARD CLOSED|SET:(laminar/B738/toggle_switch/emer_exit_lights:1)&&(laminar/B738/button_switch/cover_position[9]:0)
 sw_item_c:\white\PANEL LIGHTNING\grey\, BRIGHT|AS NEEDED:(sim/cockpit2/switches/panel_brightness_ratio[2]:><0)||(sim/cockpit2/switches/panel_brightness_ratio[2]:1)||(laminar/B738/toggle_switch/emer_exit_lights:1)&&(laminar/B738/button_switch/cover_position[9]:0)
 sw_item_c:\white\Captian - MAIN PANEL, BACKGR., AFDS LIGHTNING\grey\, BRIGHT|AS NEEDED:(sim/cockpit2/switches/panel_brightness_ratio[0]:><0)&&(sim/cockpit2/switches/generic_lights_switch[6]:><0)&&(sim/cockpit2/switches/generic_lights_switch[7]:><0)||(sim/cockpit2/switches/panel_brightness_ratio[0]:><0)&&(sim/cockpit2/switches/generic_lights_switch[7]:><0)&&(sim/cockpit2/switches/generic_lights_switch[6]:><0)||(sim/cockpit2/switches/panel_brightness_ratio[0]:><0)&&(sim/cockpit2/switches/generic_lights_switch[6]:><0)&&(sim/cockpit2/switches/generic_lights_switch[7]:><0)||(sim/cockpit2/switches/panel_brightness_ratio[0]:><0)&&(sim/cockpit2/switches/generic_lights_switch[7]:><0)&&(sim/cockpit2/switches/generic_lights_switch[6]:><0)||(sim/cockpit2/switches/generic_lights_switch[6]:><0)&&(sim/cockpit2/switches/generic_lights_switch[7]:><0)&&(sim/cockpit2/switches/panel_brightness_ratio[0]:><0)||(sim/cockpit2/switches/generic_lights_switch[6]:><0)&&(sim/cockpit2/switches/panel_brightness_ratio[0]:><0)&&(sim/cockpit2/switches/generic_lights_switch[7]:><0)||(sim/cockpit2/switches/generic_lights_switch[7]:><0)&&(sim/cockpit2/switches/panel_brightness_ratio[0]:><0)&&(sim/cockpit2/switches/generic_lights_switch[6]:><0)||(sim/cockpit2/switches/generic_lights_switch[7]:><0)&&(sim/cockpit2/switches/generic_lights_switch[6]:><0)&&(sim/cockpit2/switches/panel_brightness_ratio[0]:><0)||(sim/cockpit2/switches/panel_brightness_ratio[0]:1)&&(sim/cockpit2/switches/generic_lights_switch[6]:1)&&(sim/cockpit2/switches/generic_lights_switch[7]:1)||(laminar/B738/EFIS/EFIS_airport_on:1)
@@ -85,6 +91,18 @@ sw_item_c:\white\WING LIGHT\grey\, OFF|CHECKED:sim/cockpit2/switches/generic_lig
 sw_item_c:\white\WHEEL WELL LIGHT\grey\, OFF|CHECKED:sim/cockpit2/switches/generic_lights_switch[5]:0
 sw_item_c:\white\IGNITION SELECT\grey\, RIGHT POSITION|CHECKED:laminar/B738/toggle_switch/eng_start_source:1
 sw_item_c:\white\ENGINE START SWITCHES 1 & 2\grey\, AUTO|CHECKED:(laminar/B738/engine/starter1_pos:1)&&(laminar/B738/engine/starter2_pos:1)
+
+sw_itemvoid:
+sw_itemvoid::::::::::::::: CONSOLE PANEL ::::::::::::::::::::::::::::::::::::::::::
+sw_item_c:\white\SPEEDBRAKE LEVER\grey\, DOWN (RETRACT)|SET:sim/cockpit2/controls/speedbrake_ratio:0
+sw_item_c:\white\FLAP LEVER\grey\, UP & DETENT|CHECKED:sim/cockpit2/controls/flap_ratio:0
+sw_item_c:\white\FLAP INDICATOR\grey\, CORRESPONDS FLAP LEVER POSITION|CHECKED
+sw_item_c:\white\TAKE OFF CONFIG TEST\grey\, LEFT THRUST (HORN SOUND)|CHECKED:(laminar/B738/engine/thrust1_leveler:>0.5)&&(laminar/B738/annunciator/takeoff_config:1)
+sw_item_c:\white\LEFT THRUST IDLE SET|CHECKED:(laminar/B738/engine/thrust1_leveler:0)
+sw_item_c:\white\TAKE OFF CONFIG TEST\grey\, RIGHT THRUST (HORN SOUND)|CHECKED:(laminar/B738/engine/thrust2_leveler:>0.5)&&(laminar/B738/annunciator/takeoff_config:1)
+sw_item_c:\white\RIGHT THRUST IDLE SET|CHECKED:(laminar/B738/engine/thrust2_leveler:0)
+sw_item_c:\white\PARKING BRAKE\grey\, PULLED (ACTIVE)|SET:sim/cockpit2/controls/parking_brake_ratio:1
+sw_item_c:\white\ENGINE START LEVERS 1 & 2\grey\, CUTOFF|CHECKED:sim/cockpit2/engine/actuators/mixture_ratio_all:0
 
 ################################################################################################################
 sw_checklist:PRELIMINARY FLIGHTDECK PROCEDURE (2/3):PRELIMINARY FLIGHTDECK PROCEDURE (2/3)
@@ -107,7 +125,6 @@ sw_itemvoid:
 sw_itemvoid::::::::::::::: OVHD, HYDRAULIC PANEL ::::::::::::::::::::
 sw_item_c:\white\ENGINE HYDRAULIC PUMPS 1 & 2\grey\, ON|CHECKED:(laminar/B738/toggle_switch/hydro_pumps1_pos:1)&&(sim/operation/failures/rel_hydpmp:0)&&(laminar/B738/toggle_switch/hydro_pumps2_pos:1)&&(sim/operation/failures/rel_hydpmp2:0)
 sw_item_c:\white\ELECTRIC HYDRAULIC PUMPS A & B\grey\, ON|CHECKED:(laminar/B738/toggle_switch/electric_hydro_pumps1_pos:1)&&(laminar/B738/toggle_switch/electric_hydro_pumps2_pos:1)&&(sim/operation/failures/rel_hydpmp_ele:0)
-sw_item_c:\white\YAW DAMPER\grey\, ON|SET:(sim/cockpit2/switches/yaw_damper_on:1)
 
 sw_itemvoid::::::::::::::: OVHD, AIR CONDITIONING PANEL ::::::::::
 sw_item_c:\white\TRIM AIR\grey\, ON|SET:laminar/B738/air/trim_air_pos:1
@@ -129,51 +146,61 @@ sw_itemvoid::::::::::::::: EFB, GROUND SERVICE  ::::::::::::
 sw_item_c:\white\Drive up appropriate vehicles:AS NEEDED
 sw_item_c:\white\FWD & AFT SERVICE DOORS\grey\, OPEN|SET:(737u/doors/R1:1)&&(737u/doors/R2:1)
 sw_item_c:\white\FWD & AFT CARGO DOORS\grey\, OPEN|SET:(737u/doors/Fwd_Cargo:1)&&(737u/doors/aft_Cargo:1)
-sw_item_c:\white\FUEL TRUCK\grey\, REFUELING|START:sim/flightmodel/weight/m_fuel_total:><0
 sw_item_c:\white\SERVICE CREWS ON GROUND\grey\, START|SET:laminar/b738/fmodpack/fmod_play_cargo:1
 
 ################################################################################################################
 sw_continue
 ################################################################################################################
 
-ACARS
-  find flight
-  choose plane
+################################################################################################################
+sw_checklist:PRELIMINARY FLIGHTDECK PROCEDURE (2/3):PRELIMINARY FLIGHTDECK PROCEDURE (2/3)
+################################################################################################################
+sw_itemvoid:
+sw_itemvoid:::::::::::::::::: ACARS :::::::::::::::::::::::::::::::::::
+sw_item_c:\white\Find Flight
+sw_item_c:\white\Choose Plane
 
-SMTKP plan flight
-  build flight plan
-  submit to sim brief
-  Ensure SB Downloaded grabbed everything
-  Prefile IVAO/VATSIM
+sw_itemvoid:
+sw_itemvoid:::::::::::::::::: SimToolKitPro :::::::::::::::::::::::::::::::::::
+sw_item_c:\white\Build Flight Plan
+sw_item_c:\white\Generate OFP from Sim Brief
+sw_item_c:\white\Ensure SB downloaded all OFPs
+sw_item_c:\white\Prefile OFP with IVAO or VATSIM
 
-Radio
-  connect radio SOFTWARE
+sw_itemvoid:
+sw_itemvoid:::::::::::::::::: Radios :::::::::::::::::::::::::::::::::::
+sw_item_c:\white\Connect Radio Software
+sw_item_c:\white\IVAO - ensure it recognizes flight plan
+sw_item_c:\white\IVAO - Start 6 min timer
 
-IVAO
-  ensure it recognizes flightplan
-  if IVAO/WT start 6 minute timer
+sw_itemvoid:
+sw_itemvoid:::::::::::::::::: EFB :::::::::::::::::::::::::::::::::::
+sw_item_c:\white\Enter Payload info
+sw_item_c:\white\FWD & AFT SERVICE DOORS\grey\, CLOSE|SET:(737u/doors/R1:0)&&(737u/doors/R2:0)
+sw_item_c:\white\SERVICE CREWS ON GROUND\grey\, STOP|SET:laminar/b738/fmodpack/fmod_play_cargo:0
+sw_item_c:\white\FUEL TRUCK\grey\, REFUELING|START:sim/flightmodel/weight/m_fuel_total:><0
 
-EFB
-  Payload
-  Call Fuel Truck
+sw_itemvoid:
+sw_itemvoid:::::::::::::::::: Trackers :::::::::::::::::::::::::::::::::::
+sw_item_c:\white\SimToolKitPro
+sw_item_c:\white\ACARS
 
-Finish cleaning
-  Dispatch CREW except stairs if required
-  close all doors except forward(and rear) ENTRY
+sw_itemvoid:
+sw_item_c:\white\Contact ATC for Clearance
 
-Start trackers
-  Simtoolkit Pro
-  ACARS
+sw_itemvoid:
+sw_itemvoid:::::::::::::::::: Start Boarding :::::::::::::::::::::::::::::::::::
+sw_item_c:\white\Self Loading Card
+sw_item_c:\white\Start Flight Leg\grey\, START|SET:laminar/b738/fmodpack/fmod_start_leg:1
 
-Contact ATC for clearance
+sw_itemvoid:
+sw_itemvoid:::::::::::::::::: Program MCP :::::::::::::::::::::::::::::::::::
+sw_item_c:\white\Program MCP
+sw_item_c:\white\Organize Charts
 
-Start Boarding
-  Self Loading Cargo
-  EFB - Start SERVICE
-
-organize CHARTS
-
-
+################################################################################################################
+sw_continue
+################################################################################################################
 
 
 ################################################################################################################
@@ -193,9 +220,10 @@ sw_item_c:\white\TERRAIN RADAR\grey\, ON (FIRST OFFICER, TFC DIST. <40)|SET:(lam
 sw_item_c:\white\WEATHER RADAR\grey\, OFF|CHECKED:sim/cockpit/switches/EFIS_shows_weather:0
 
 MCP
+  Flight Directors on
   courses and headings per SID or depature RW
   IAS = V2+5
-  ALtitude = cleared to or final flight LEVEL
+  Altitude = cleared to or final flight LEVEL
   Roll and Pitch Mode for AP
 
 sw_itemvoid
@@ -209,6 +237,7 @@ sw_itemvoid::::::::::::::: OVHD & EFB, GROUND SERVICE ::::::::::::::
 sw_item_c:\white\APU\grey\, STARTED (RUNS 1 MINUTE LOADLESS)|SET:(sim/cockpit/engine/APU_running:1)&&(laminar/B738/electrical/apu_bus_enable:1)
 sw_item_c:\white\APU BLEED\grey\, ON|SET:(laminar/B738/toggle_switch/bleed_air_apu_pos:1)&&(sim/operation/failures/rel_APU_press:0)
 sw_item_c:\white\MIDDLE APU GENERATORS\grey\, ON|SET:(sim/cockpit2/electrical/APU_generator_on:1)&&(laminar/B738/electrical/apu_power_bus1:1)&&(laminar/B738/electrical/apu_power_bus2:1)&&(laminar/B738/annunciator/source_off1:0)&&(laminar/B738/annunciator/source_off2:0)
+sw_item_c:\white\ASU\grey\, DISCONNECTED|SET
 sw_item_c:\white\GPU\grey\, DISCONNECTED|SET:laminar/B738/fmod/gpu_deployed:0
 
 sw_itemvoid:
@@ -237,15 +266,15 @@ sw_item_c:\white\TRANSPONDER\grey\, ALT OFF (IVAO STBY)|SET:(laminar/B738/knob/t
 
 sw_itemvoid:
 sw_itemvoid::::::::::::::: OVHD, LIGHTING & AIR PRESSURE PANEL :::::
-Check Doors Closed
+sw_item_c:\white\Check all Doors Closed
 sw_item_c:\white\ANTI COLLISION LIGHT\grey\, ON|SET:(sim/cockpit/electrical/beacon_lights_on:1)&&(sim/operation/failures/rel_lites_beac:0)
-sw_item_c:\white\LEFT & RIGHT AIR CONDITIONING PACKS\grey\, OFF|SET:(laminar/4B738/air/l_pack_pos:0)&&(laminar/B738/air/r_pack_pos:0)
-82
+
 sw_itemvoid:
 sw_itemvoid::::::::::::::: RADIO PANEL & EFB, GROUND SERVICE :::::::
 sw_item_c:\white\CONTACT ATC\grey\, REQUEST PUSH & START|DONE:laminar/b738/fmodpack/real_groundspeed:>0.5
 sw_item_c:\white\plan pushback
 sw_item_c:\white\START PUSHBACK\grey\, AS GIVEN BY ATC|DONE:laminar/b738/fmodpack/real_groundspeed:>0.5
+sw_item_c:\white\LEFT & RIGHT AIR CONDITIONING PACKS\grey\, OFF|SET:(laminar/4B738/air/l_pack_pos:0)&&(laminar/B738/air/r_pack_pos:0)
 sw_itemvoid_c:\grey\FOLLOW GROUND INSTRUCTIONS FOR PUSHBACK
 
 sw_itemvoid:
@@ -263,15 +292,13 @@ sw_continue
 ################################################################################################################
 
 
-
 ################################################################################################################
 sw_checklist:BEFORE TAXI PROCEDURE:BEFORE TAXI PROCEDURE
 ################################################################################################################
 sw_itemvoid::::::::::::::: OVHD PANEL ::::::::::::::::::::::::::::::::::::::::::
 sw_item_c:\white\ENGINE GENERATORS 1 & 2\grey\, ON|SET:(sim/cockpit2/electrical/generator_on[0]:1)&&(sim/operation/failures/rel_genera0:0)&&(sim/cockpit2/electrical/generator_on[1]:1)&&(sim/operation/failures/rel_genera1:0)
-sw_item_c:\white\APU SWITCH\grey\, OFF|SET:laminar/B738/spring_toggle_switch/APU_start_pos:0
+sw_item_c:\white\ENGINE BLEED AIR 1 & 2\grey\, ON|CHECKED:(laminar/B738/toggle_switch/bleed_air_1_pos:1)&&(laminar/B738/toggle_switch/bleed_air_2_pos:1)&&(sim/operation/failures/rel_bleed_air_lft:0)&&(sim/operation/failures/rel_bleed_air_rgt:0)
 sw_item_c:\white\ENGINE START SWITCHES 1 & 2\grey\, CONTINUES|SET:(laminar/B738/engine/starter1_pos:2)&&(laminar/B738/engine/starter2_pos:2)
-sw_itemvoid_c:\white\LEFT & RIGHT WIPER\grey\, INT / LOW / HIGH (RAIN)
 sw_item_c:\white\PROBE HEATS A & B\grey\, ON|SET:(laminar/B738/toggle_switch/capt_probes_pos:1)&&(sim/operation/failures/rel_ice_pitot_heat1:0)&&(laminar/B738/toggle_switch/fo_probes_pos:1)&&(sim/operation/failures/rel_ice_pitot_heat2:0)
 sw_itemvoid_c:\white\ENGINE ANTI ICE\grey\, TEMP. <10 DEGREES & VIS. MOIST.
 sw_itemvoid_c:\white\WING ANTI ICE\grey\, TEMP. <10 DEGREES & VIS. MOIST.
@@ -281,6 +308,8 @@ sw_itemvoid::::::::::::::: OVHD, AIR PRESSURE PANEL ::::::::::::::::::::
 sw_item_c:\white\LEFT & RIGHT AIR CONDITIONING PACK\grey\, AUTO|SET:(laminar/B738/air/l_pack_pos:1)&&(laminar/B738/air/r_pack_pos:1)
 sw_item_c:\white\ISOLATION VALVE\grey\, AUTO|SET:laminar/B738/air/isolation_valve_pos:1
 sw_item_c:\white\APU BLEED\grey\, OFF|SET:laminar/B738/toggle_switch/bleed_air_apu_pos:0
+sw_item_c:\white\APU SWITCH\grey\, OFF|SET:laminar/B738/spring_toggle_switch/APU_start_pos:0
+
 
 sw_itemvoid:
 sw_itemvoid::::::::::::::: GROUND SERVICE :::::::::::::::::::::::::::::::::::
@@ -301,9 +330,6 @@ sw_item_c:\white\RECALL\grey\, SIXPACK ALL OFF (CAPTAIN & FIRST OFFICER)|CHECKED
 sw_item_c:\white\LOWER DU\grey\, SWITCH OFF ENGINE PAGE (MFD)|SET:laminar/B738/systems/lowerDU_page:0
 sw_itemvoid_c:\grey\(IT WILL POPUP DURING ENGINE EXCEEDANCE)
 
-sw_itemvoid:
-sw_itemvoid::::::::::::::: GLARESHIELD :::::::::::::::::::::::::::::::::::::::::
-sw_item_c:\white\NORMAL CHECKLIST\grey\, BEFORE TAXI (READ OUT)|COMPL.:laminar/B738/checklist/manip_enable:1:0
 ################################################################################################################
 sw_continue
 ################################################################################################################
@@ -326,10 +352,6 @@ sw_item_c:\white\TAKE OFF CONFIG\grey\, TEST (NO HORN SOUND)|CHECKED:(laminar/B7
 sw_itemvoid_c:\grey\(ENSURES AIRCRAFT IS PROPERLY SET FOR T/O)
 sw_item_c:\white\BRAKES\grey\, TEST|CHECKED:(sim/cockpit2/controls/parking_brake_ratio:>0.15)||(laminar/b738/fmodpack/real_groundspeed:><3)&&(sim/cockpit2/controls/left_brake_ratio:>0)||(laminar/b738/fmodpack/real_groundspeed:><3)&&(sim/cockpit2/controls/right_brake_ratio:>0)
 sw_itemvoid_c:\grey\MAX. 15KTS (TURNS) / 25KTS (STRAIGHTS)
-
-sw_itemvoid:
-sw_itemvoid::::::::::::::: EFB, GROUND SERVICE :::::::::::::::::::::::
-sw_item_c:\white\CABIN LIGHTING\grey\, TAKEOFF (PASSENGER AREA)|SET:737x/cabin/set_pax_lighting:1
 
 sw_itemvoid:
 sw_itemvoid::::::::::::::: OVHD, MIDDLE PANEL :::::::::::::::::::::::::
@@ -364,11 +386,7 @@ sw_itemvoid:
 sw_itemvoid::::::::::::::: RADIO PANEL ::::::::::::::::::::::::::::::::::
 sw_item_c:\white\TRANSPONDER\grey\, TA/RA|SET:(laminar/B738/knob/transponder_pos:5)&&(sim/operation/failures/rel_xpndr:0)
 
-sw_itemvoid:
-sw_itemvoid::::::::::::::: COCKPIT :::::::::::::::::::::::::::::::::::::::::
-sw_item_c:\white\YOKE CHECKLIST\grey\, BEFORE TAKE-OFF (READ OUT)|COMPL.:(laminar/B738/capt/yoke_checklist:><0)||((laminar/B738/fo/yoke_checklist:><0))
-sw_itemvoid_c:\grey\(MOVE YELLOW KNOB TO NEXT CHECKLIST)
-################################################################################################################
+s################################################################################################################
 sw_continue
 ################################################################################################################
 
