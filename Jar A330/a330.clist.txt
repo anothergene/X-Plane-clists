@@ -1,0 +1,426 @@
+
+sw_checklist:Normal Procedures
+sw_itemvoid:                      v1.1.2
+sw_itemvoid:            JARDesign A330-200 v3
+sw_itemvoid:
+sw_itemvoid:                         by
+sw_itemvoid:                     Ray Trac
+sw_itemvoid:                (ZotacAviation)
+
+sw_checklist:PRELIM | POWER UP:PRELIM | POWER UP
+sw_item:CALL GPU|CALLED:sim/custom/xap/elec/gpu_here:1
+sw_item:Weather Radar OFF|OFF:sim/cockpit/switches/EFIFS_shows_weather:0
+sw_item:Weather Windshear/PWS AUTO|AUTO:sim/custom/xap/wx_radar/windshear:0
+sw_item:Weather Gain AUTO|AUTO:sim/custom/xap/wx_radar/gain:0
+sw_item:Engine Master Switch 1 & 2 OFF|OFF:(sim/custom/xap/engines/eng1msw:0)&&(sim/custom/xap/engines/eng2msw:0)
+sw_item:Engine Mode Selector NORMAL|NORMAL:sim/custom/xap/engines/startsel:0
+sw_item:Landing Gear DOWN|DOWN:sim/cockpit/switches/gear_handle_status:>0
+sw_item:Wipers OFF|OFF:sim/cockpit2/switches/wiper_speed:0
+sw_item:GPU AVAIL|AVAIL:sim/custom/xap/elec/gpu_av:1
+sw_item:EXT Power A & B ON|ON:(sim/custom/xap/elec/gpu_onA:1)&&(sim/custom/xap/elec/gpu_onB:1)
+sw_item:Battery Voltage CHECK Above 25.5|CHECK:sim/custom/xap/elec/gpu_av:1
+sw_item:Battery 1 ON|ON:sim/custom/xap/elec/bat1_on:1
+sw_item:Battery 2 ON|ON:sim/custom/xap/elec/bat2_on:1
+sw_item:APU Battery ON|ON:sim/custom/xap/elec/bat3_on:1
+sw_item:Emergency Lights ARM|ARMED:sim/custom/xap/extlight/emer_ext_lt:1
+sw_item:Cockpit Lights SET|SET:(sim/custom/xap/light/dome_on:1)&&(sim/custom/xap/intlight/int_pan_ped_kn:>0)
+sw_item:Nav & Logo Lights ON|ON:sim/cockpit/electrical/nav_lights_on:1
+sw_item:Wing Light ON|ON:sim/custom/xap/extlight/wing_sw:1
+sw_item:Strobe Lights AUTO|AUTO:sim/custom/xap/extlight/strobe_sw:1
+sw_item:AC Temperatures SET|SET:(sim/custom/xap/cond/fwd_knob:20|24)&&(sim/custom/xap/cond/ckpt_knob:20|24)
+sw_item:System Page CHECK|CHECK:sim/custom/xap/disp/sys/mode:15
+sw_item:Radio Displays ON|ON:sim/custom/xap/radio/on:1
+sw_item:VHF 1 SELECT|SELECTED:sim/custom/xap/acp/rec_on/vhf1:1
+sw_item:Radio Volumes SET|SET:(sim/custom/xap/acp/rec_kn/vhf1:100)&&(sim/custom/xap/acp/rec_kn/vhf2:100)
+sw_continue:PRELIM | BEFORE INSPECTION
+
+sw_checklist:PRELIM | BEFORE INSPECTION:PRELIM | BEFORE INSPECTION
+sw_item:Speedbrakes RETRACT & DISARM|RETRACTED & DISARMED:sim/cockpit2/controls/speedbrake_ratio:0.0
+sw_item:Flaps RETRACT|RETRACTED:sim/custom/xap/mcdu/flaps_pos_fact:0
+sw_item:Wheel Page SELECT|SELECTED:sim/custom/xap/disp/sys/mode:11
+sw_item:Probe Window Heat AUTO|AUTO:sim/cockpit/switches/anti_ice_window_heat:1
+sw_item:CrossBleed AUTO|AUTO:sim/custom/xap/bleed/mode_sw:1
+sw_item:AC Packs 1 & 2 ON|ON:(sim/custom/xap/cond/pack1:1)&&(sim/custom/xap/cond/pack2:1)
+sw_item:Pack Airflow SET|SET:sim/custom/xap/cond/airflow:!2
+sw_remark:  HI if >140 PAX or hot & humid
+sw_item:ATIS Information OBTAIN|OBTAINED
+sw_continue:PRELIM | AFTER INSPECTION
+
+sw_checklist:PRELIM | AFTER INSPECTION:PRELIM | AFTER INSPECTION
+sw_item:Electrical Page CHECK|CHECK:sim/custom/xap/disp/sys/mode:4
+sw_item:Ventilation Page CHECK|CHECK:sim/custom/xap/disp/sys/mode:9
+sw_item:ADIRS 1 Selector on NAV|NAV:sim/custom/xap/adirs/mode_sel_1:1
+sw_item:  Wait for BAT light OFF|.:sim/custom/xap/adirs/on_bat:0
+sw_item:ADIRS 2 Selector on NAV|NAV:sim/custom/xap/adirs/mode_sel_2:1
+sw_item:  Wait for BAT light OFF|.:sim/custom/xap/adirs/on_bat:0
+sw_item:ADIRS 3 Selector on NAV|NAV:sim/custom/xap/adirs/mode_sel_3:1
+sw_item:Landing Elevation AUTO|AUTO:sim/custom/xap/press/cab_deltaP:0
+sw_item:Seatbelt Signs ON|ON:sim/cockpit/switches/fasten_seat_belts:1
+sw_item:No Smoking Sign ON|ON:sim/cockpit/switches/no_smoking:1
+sw_continue:PRELIM | COCKPIT PREPARATION
+
+sw_checklist:PRELIM | COCKPIT PREPARATION:PRELIM | COCKPIT PREPARATION
+sw_item:Delivery Frequency SET|SET
+sw_item:Barometer SET|SET
+sw_item:FMGS CONFIGURE|CONFIGURED
+sw_item:Verify FMGS Transition Altitude SET|SET
+sw_item:Fuel Quantity CHECK|CHECK
+sw_item:ATC Clearance OBTAIN|OBTAINED
+sw_item:FMGS SID CONFIGURE|CONFIGURED 
+sw_item:Autopilot Initial Altitude SET|SET
+sw_item:ND Mode & Range SET|SET
+sw_itemvoid:  Range set to first WPT
+sw_item:Clock Time VERIFY|VERIFIED
+sw_item:Transponder STANDBY|STANDBY:sim/custom/xap/atc/mode_sel:0
+sw_item:Antiskid ON|ON:sim/custom/xap/wheels/ant_skeed:1
+sw_item:Verify ADIRS ALIGNED|ALIGNED:sim/custom/xap/adirs/align_in_min:<=0
+sw_continue:BEFORE START
+
+sw_checklist:BEFORE START:BEFORE START
+sw_itemvoid:------------------------
+sw_remark:APU START PROCEDURE
+sw_item:APU Fire Test|CHECK:sim/custom/xap/firetest/apu:1
+sw_item:APU Master ON|ON:sim/cockpit/engine/APU_switch:1
+sw_item:APU Page SELECT|SELECTED:sim/custom/xap/disp/sys/mode:8
+sw_item:APU Flap Open|OPEN:sim/custom/xap/apu/flap:>98
+sw_item:APU Start|START:sim/cockpit/engine/APU_running:1
+sw_item:APU Available|AVAILABLE:sim/cockpit/engine/APU_N1:>98
+sw_item:APU Bleed ON|ON:sim/custom/xap/bleed/apu_blvlv:1
+sw_item:Exterior Power A & B OFF|OFF:(sim/custom/xap/elec/gpu_onA:0) && (sim/custom/xap/elec/gpu_onB:0)
+sw_item:Dismiss GPU|DISMISSED:sim/custom/xap/elec/gpu_here:0
+sw_remark:APU START PROCEDURE END
+sw_itemvoid:------------------------
+sw_continue:PUSHBACK
+
+sw_checklist:PUSHBACK:PUSHBACK
+sw_itemvoid:Skip if engine start before pushback
+sw_item:CONNECT Tug|CONNECTED:bp/connected:1
+sw_item:Antiskid OFF|OFF:sim/custom/xap/wheels/ant_skeed:0
+sw_item:Transponder ON|ON:sim/custom/xap/atc/mode_sel:2
+sw_item:Cabin Doors CLOSE|CLOSED:sim/custom/xap/doors/one_door_open:0
+sw_item:Push & Start Clearance OBTAIN|OBTAINED
+sw_item:Beacon Light ON|ON:sim/custom/xap/extlight/beacon_sw:1
+sw_item:Parking Brake OFF|OFF:sim/flightmodel/controls/parkbrake:0
+sw_itemvoid:------------------------
+sw_remark:ENGINE START PROCEDURE
+sw_item:AC Packs 1 & 2 OFF|OFF:(sim/custom/xap/cond/pack1:0)&&(sim/custom/xap/cond/pack2:0)
+sw_item:Thrust Levers IDLE|IDLE:(sim/flightmodel/engine/ENGN_thro[0]:0.0)&&(sim/flightmodel/engine/ENGN_thro[1]:0.0)
+sw_item:Engines Fire Test|CHECK:sim/custom/xap/firetest/e1:1
+sw_item:Left & Right Fuel Pumps 1 & 2 ON|1 & 2 ON ON:(sim/custom/xap/fuel/pump/l1:1)&&(sim/custom/xap/fuel/pump/l2:1)&&(sim/custom/xap/fuel/pump/r1:1)&&(sim/custom/xap/fuel/pump/r2:1)
+sw_item:Engine Mode Selector START|START:sim/custom/xap/engines/startsel:1
+sw_item:Engine 1 Master Switch ON|STARTING ENGINE NUMBER 1:sim/custom/xap/engines/eng1msw:1
+sw_item:Wait Until Engine 1 N1 STABILIZED|STABILIZED:sim/cockpit2/engine/indicators/N1_percent[0]:>20
+sw_item:Engine 2 Master Switch ON|STARTING ENGINE NUMBER 2:sim/custom/xap/engines/eng2msw:1
+sw_item:Wait Until Engine 2 N1 STABILIZED|STABILIZED:sim/cockpit2/engine/indicators/N1_percent[1]:>20
+sw_item:Engine Mode Selector NORMAL|NORMAL:sim/custom/xap/engines/startsel:0
+sw_remark:ENGINE START PROCEDURE END
+sw_itemvoid:------------------------
+sw_itemvoid:Pushback Stopped
+sw_item:Parking Brake ON|ON:sim/flightmodel/controls/parkbrake:1
+sw_item:Antiskid ON|ON:sim/custom/xap/wheels/ant_skeed:1
+sw_item:DISCONNECT Tug|DISCONNECTED:bp/connected:0
+sw_continue:AFTER ENGINE START
+
+sw_checklist:ENGINE START:ENGINE START
+sw_itemvoid:Go back if engine start during pushback
+sw_item:Engine Start Clearance OBTAIN|OBTAINED
+sw_item:Beacon Light ON|ON:sim/custom/xap/extlight/beacon_sw:1
+sw_item:AC Packs 1 & 2 OFF|OFF:(sim/custom/xap/cond/pack1:0)&&(sim/custom/xap/cond/pack2:0)
+sw_item:Thrust Levers IDLE|IDLE:(sim/flightmodel/engine/ENGN_thro[0]:0.0)&&(sim/flightmodel/engine/ENGN_thro[1]:0.0)
+sw_item:Engines Fire Test|CHECK:sim/custom/xap/firetest/e1:1
+sw_item:Left & Right Fuel Pumps 1 & 2 ON|1 & 2 ON ON:(sim/custom/xap/fuel/pump/l1:1)&&(sim/custom/xap/fuel/pump/l2:1)&&(sim/custom/xap/fuel/pump/r1:1)&&(sim/custom/xap/fuel/pump/r2:1)
+sw_item:Engine Mode Selector START|START:sim/custom/xap/engines/startsel:1
+sw_item:Engine 1 Master Switch ON|STARTING ENGINE NUMBER 1:sim/custom/xap/engines/eng1msw:1
+sw_item:Wait Until Engine 1 N1 STABILIZED|STABILIZED:sim/cockpit2/engine/indicators/N1_percent[0]:>20
+sw_item:Engine 2 Master Switch ON|STARTING ENGINE NUMBER 2:sim/custom/xap/engines/eng2msw:1
+sw_item:Wait Until Engine 2 N1 STABILIZED|STABILIZED:sim/cockpit2/engine/indicators/N1_percent[1]:>20
+sw_item:Engine Mode Selector NORMAL|NORMAL:sim/custom/xap/engines/startsel:0
+sw_continue:AFTER ENGINE START ALT
+
+sw_checklist:AFTER ENGINE START ALT:AFTER ENGINE START ALT
+sw_item:APU Bleed OFF|OFF:sim/custom/xap/bleed/apu_blvlv:0
+sw_item:Anti-Ice AS REQUIRED|CHECK
+sw_item:APU Battery OFF|OFF:sim/custom/xap/elec/bat3_on:0
+sw_item:APU Master OFF|OFF:sim/cockpit/engine/APU_running:0
+sw_item:AC Packs 1 & 2 ON|ON:(sim/custom/xap/cond/pack1:1)&&(sim/custom/xap/cond/pack2:1)
+sw_item:Autobrake MAX|MAX:sim/custom/xap/brakes/auto_max:1
+sw_item:Ground Spoilers ARM|ARMED:sim/cockpit2/controls/speedbrake_ratio:<=-0.5
+sw_item:Rudder Trim SET 0|0:sim/cockpit2/controls/rudder_trim:0.0
+sw_item:Flaps TAKEOFF Position|SET:sim/custom/xap/flap_lvrpos:1
+sw_item:Elevator Trim SET|SET
+sw_itemvoid:------------------------
+sw_remark:FLIGHT CONTROLS CHECK
+sw_item:Flight Controls Page SELECT|SELECTED:sim/custom/xap/disp/sys/mode:12
+sw_item:Full UP|.:sim/joystick/FC_ptch:>0.5
+sw_item:Full DOWN|.:sim/joystick/FC_ptch:<-0.5
+sw_item:NEUTRAL|.:(sim/joystick/yoke_heading_ratio:-0.03|0.03)&&(sim/joystick/FC_ptch:-0.03|0.03)&&(sim/joystick/FC_roll:-0.03|0.03)
+sw_item:Full LEFT|.:sim/joystick/FC_roll:<-0.5
+sw_item:Full RIGHT|.:sim/joystick/FC_roll:>0.5
+sw_item:NEUTRAL|.:(sim/joystick/yoke_heading_ratio:-0.03|0.03)&&(sim/joystick/FC_ptch:-0.03|0.03)&&(sim/joystick/FC_roll:-0.03|0.03)
+sw_item:Rudder Full LEFT|.:sim/joystick/yoke_heading_ratio:<-0.5
+sw_item:Full RIGHT|.:sim/joystick/yoke_heading_ratio:>0.5
+sw_item:NEUTRAL|.:(sim/joystick/yoke_heading_ratio:-0.03|0.03)&&(sim/joystick/FC_ptch:-0.03|0.03)&&(sim/joystick/FC_roll:-0.03|0.03)
+sw_remark:FLIGHT CONTROLS CHECK END
+sw_itemvoid:------------------------
+sw_item:Wheels Page SELECT|SELECTED:sim/custom/xap/disp/sys/mode:11
+sw_item:Flight Director ON|ON:sim/custom/xap/fcu/fd:1
+sw_item:Landing System OFF|OFF:sim/custom/xap/fcu/ils:0
+sw_item:Autobrake MAX|MAX:sim/custom/xap/brakes/auto_max:1
+sw_continue:PUSHBACK ALT
+
+sw_checklist:PUSHBACK ALT:PUSHBACK ALT
+sw_item:CONNECT Tug|CONNECTED:bp/connected:1
+sw_item:Antiskid OFF|OFF:sim/custom/xap/wheels/ant_skeed:0
+sw_item:Transponder ON|ON:sim/custom/xap/atc/mode_sel:2
+sw_item:Cabin Doors CLOSE|CLOSED:sim/custom/xap/doors/one_door_open:0
+sw_item:Pushback Clearance OBTAIN|OBTAINED
+sw_item:Parking Brake OFF|OFF:sim/flightmodel/controls/parkbrake:0
+sw_itemvoid:Pushback Stopped
+sw_item:Parking Brake ON|ON:sim/flightmodel/controls/parkbrake:1
+sw_item:Antiskid ON|ON:sim/custom/xap/wheels/ant_skeed:1
+sw_item:DISCONNECT Tug|DISCONNECTED:bp/connected:0
+sw_continue:TAXI
+
+sw_checklist:AFTER ENGINE START:AFTER ENGINE START
+sw_item:APU Bleed OFF|OFF:sim/custom/xap/bleed/apu_blvlv:0
+sw_item:Anti-Ice AS REQUIRED|CHECK
+sw_item:APU Battery OFF|OFF:sim/custom/xap/elec/bat3_on:0
+sw_item:APU Master OFF|OFF:sim/cockpit/engine/APU_running:0
+sw_item:Ground Spoilers ARM|ARMED:sim/cockpit2/controls/speedbrake_ratio:<=-0.5
+sw_item:Rudder Trim SET 0|0:sim/cockpit2/controls/rudder_trim:0.0
+sw_item:Flaps TAKEOFF Position|SET:sim/custom/xap/flap_lvrpos:1
+sw_item:Elevator Trim SET|SET
+sw_item:AC Packs 1 & 2 ON|ON:(sim/custom/xap/cond/pack1:1)&&(sim/custom/xap/cond/pack2:1)
+sw_itemvoid:------------------------
+sw_remark:FLIGHT CONTROLS CHECK
+sw_item:Flight Controls Page SELECT|SELECTED:sim/custom/xap/disp/sys/mode:12
+sw_item:Full UP|.:sim/joystick/FC_ptch:>0.5
+sw_item:Full DOWN|.:sim/joystick/FC_ptch:<-0.5
+sw_item:NEUTRAL|.:(sim/joystick/yoke_heading_ratio:-0.03|0.03)&&(sim/joystick/FC_ptch:-0.03|0.03)&&(sim/joystick/FC_roll:-0.03|0.03)
+sw_item:Full LEFT|.:sim/joystick/FC_roll:<-0.5
+sw_item:Full RIGHT|.:sim/joystick/FC_roll:>0.5
+sw_item:NEUTRAL|.:(sim/joystick/yoke_heading_ratio:-0.03|0.03)&&(sim/joystick/FC_ptch:-0.03|0.03)&&(sim/joystick/FC_roll:-0.03|0.03)
+sw_item:Rudder Full LEFT|.:sim/joystick/yoke_heading_ratio:<-0.5
+sw_item:Full RIGHT|.:sim/joystick/yoke_heading_ratio:>0.5
+sw_item:NEUTRAL|.:(sim/joystick/yoke_heading_ratio:-0.03|0.03)&&(sim/joystick/FC_ptch:-0.03|0.03)&&(sim/joystick/FC_roll:-0.03|0.03)
+sw_remark:FLIGHT CONTROLS CHECK END
+sw_itemvoid:------------------------
+sw_item:Wheels Page SELECT|SELECTED:sim/custom/xap/disp/sys/mode:11
+sw_item:Flight Director ON|ON:sim/custom/xap/fcu/fd:1
+sw_item:Landing System OFF|OFF:sim/custom/xap/fcu/ils:0
+sw_item:Autobrake MAX|MAX:sim/custom/xap/brakes/auto_max:1
+sw_continue:TAXI
+
+sw_checklist:TAXI:TAXI
+sw_item:Taxi Clearance OBTAIN|OBTAINED
+sw_item:CHECK Left & Right Side Clear|Left Side Clear, Right Side Clear
+sw_item:Nose Lights TAXI|SET:sim/custom/xap/extlight/nose_sw:1
+sw_item:Turnoff Lights ON|ON:sim/custom/xap/extlight/rwyturn_sw:1
+sw_item:Parking Brake RELEASE|RELEASED:sim/flightmodel/controls/parkbrake:0
+sw_item:Taxi Thrust SET|SET:sim/cockpit2/engine/actuators/throttle_ratio_all:>0
+sw_item:Brake CHECK|PRESSURE ZERO:(sim/custom/xap/brakes/left_br_press:>0.2)&&(sim/custom/xap/brakes/rght_br_press:>0.2)
+sw_item:Takeoff CONFIG OK|CONFIG OK
+sw_item:Weather Radar|ON:sim/cockpit/switches/EFIFS_shows_weather:1
+sw_item:Weather Windshear/PWS AUTO|AUTO:sim/custom/xap/wx_radar/windshear:0
+sw_item:Terrain on ND AS REQUIRED|SET:sim/custom/terr_on_nd:0|1
+sw_item:Strobe Lights AS REQUIRED|SET:sim/custom/xap/extlight/strobe_sw:>0
+sw_continue:BEFORE TAKEOFF
+
+sw_checklist:BEFORE TAKEOFF:BEFORE TAKEOFF
+sw_item:Line-up Clearance OBTAIN|OBTAINED
+sw_item:Strobe Lights ON|ON:sim/custom/xap/extlight/strobe_sw:2
+sw_item:Takeoff Clearance OBTAIN|OBTAINED
+sw_item:Landing Lights ON|ON:sim/custom/xap/extlight/land_sw:>=1
+sw_item:Nose Lights TAKEOFF|SET:sim/custom/xap/extlight/nose_sw:2
+sw_remark:Engine Mode Selector IGNITION if standing water present or heavy precipitation
+sw_item:Transponder Mode TA/RA|TA/RA:sim/custom/xap/atc/ta_tara:2
+sw_item:Brake Temperature CHECK|CHECK:sim/custom/xap/disp/sys/mode:11
+sw_item:Brake Fans OFF|OFF:sim/custom/xap/wheels/br_fun:0
+sw_item:AC Packs 1 & 2 OFF|OFF:(sim/custom/xap/cond/pack1:0)&&(sim/custom/xap/cond/pack2:0)
+sw_continue:TAKEOFF
+
+sw_checklist:TAKEOFF:TAKEOFF
+sw_remark:TAKEOFF
+sw_item:Chrono START|START:sim/custom/xap/et_timer/chrono:0
+sw_item:Thrust 50% SET|SET:sim/custom/xap/engines/thrust_calc:>100000.0
+sw_remark:Crosswind less than 20 & no tailwind sidestick half forward up to 80 knots neutral by 100 otherwise full forward
+sw_item:Brakes RELEASE|RELEASED:sim/flightmodel/controls/parkbrake:0
+sw_item:N1 STABILIZE|STABILIZED:sim/cockpit2/gauges/indicators/airspeed_kts_pilot:>=30
+sw_item:Thrust Levers FLEX|FLEX:sim/custom/xap/engines/thrust_calc:>200000.0
+sw_item:.|THRUST SET:sim/cockpit2/gauges/indicators/airspeed_kts_pilot:>=80
+sw_item:.|100 KNOTS:sim/cockpit2/gauges/indicators/airspeed_kts_pilot:>=100
+sw_item:.|POSITIVE CLIMB:sim/cockpit2/gauges/indicators/radio_altimeter_height_ft_pilot:>80
+sw_item:Landing Gear UP|UP:sim/cockpit/switches/gear_handle_status:0
+sw_item:.|.:sim/cockpit2/gauges/indicators/altitude_ft_pilot:>=1000
+sw_item:Thrust Levers CLIMB|CLIMB:sim/custom/xap/engines/thrust_calc:161400|161500
+sw_item:AC Pack 1 ON|1 ON:sim/custom/xap/cond/pack1:1
+sw_item:.|.:sim/cockpit2/gauges/indicators/airspeed_kts_pilot:>165.0
+sw_item:Flaps 0|SPEED CHECK:(sim/custom/xap/flap_lvrpos:0) && (sim/cockpit2/gauges/indicators/airspeed_kts_pilot:>165.0)
+sw_item:Ground Spoilers DISARMED|DISARMED:sim/cockpit2/controls/speedbrake_ratio:0.0
+sw_continue:AFTER TAKEOFF
+
+sw_checklist:AFTER TAKEOFF
+sw_item:Autopilot AP1 ON|ON:sim/custom/xap/fcu/ap1:1
+sw_item:Nose Light OFF|OFF:sim/custom/xap/extlight/nose_sw:0
+sw_item:Turnoff Lights OFF|OFF:sim/custom/xap/extlight/rwyturn_sw:0
+sw_continue:CLIMB
+
+sw_checklist:CLIMB:CLIMB
+sw_item:Transponder Mode TA/RA|TA/RA:sim/custom/xap/atc/ta_tara:2
+sw_remark:Engine Mode Selector IGNITION if standing water present or heavy precipitation
+sw_item:Anti-Ice AS REQUIRED|CHECK
+sw_item:Terrain on ND AS REQUIRED|CHECK:sim/custom/terr_on_nd:0|1
+sw_item:AC Pack 2 ON|2 ON:sim/custom/xap/cond/pack2:1
+sw_item:.|10 Thousand Feet Checks:sim/cockpit2/gauges/indicators/altitude_ft_pilot:>10000
+sw_item:Landing Lights OFF|OFF:sim/cockpit2/switches/landing_lights_on:0
+sw_item:Seatbelt Signs OFF|OFF:sim/cockpit/switches/fasten_seat_belts:0
+sw_item:.|.:sim/cockpit2/gauges/indicators/altitude_ft_pilot:>18000
+sw_item:Barometer SET STANDARD|SET:sim/cockpit/misc/barometer_setting:29.92
+sw_continue:CRUISE
+
+sw_checklist:CRUISE:CRUISE
+sw_item:Cabin Temperature CHECK|CHECK
+sw_continue:CRUISE2
+
+sw_checklist:CRUISE2:CRUISE2
+sw_item:Fuel Quantity CHECK|CHECK
+sw_item:Anti-Ice AS REQUIRED|CHECK
+sw_item:.|.:sim/flightmodel/controls/dist:><74080
+sw_continue:CRUISE3
+
+sw_checklist:CRUISE3:CRUISE3
+sw_item:Fuel Quantity CHECK|CHECK
+sw_item:Anti-Ice AS REQUIRED|CHECK
+sw_item:.|.:sim/flightmodel/controls/dist:><74080
+sw_continue:CRUISE2
+
+sw_checklist:DESCENT PREPARATION:DESCENT PREPARATION
+sw_item:FMGS Descent Constraints SET|SET
+sw_item:ATIS Information OBTAIN|OBTAINED
+sw_item:Autobrake AS REQUIRED|SET:(sim/custom/xap/brakes/auto_low:1)||(sim/custom/xap/brakes/auto_med:1)||(sim/custom/xap/brakes/auto_max:1)
+sw_item:FMGS Approach Information SET|SET
+sw_continue:APPROACH BRIEFING
+
+sw_checklist:APPROACH BRIEFING:APPROACH BRIEFING
+sw_item:Fuel Quantity CHECK|CHECK
+sw_item:NAV Frequencies SET|SET
+sw_item:Go Around Procedure REVIEW|REVIEWED
+sw_item:Taxi & Ramp Routing REVIEW|REVIEWED
+sw_continue:DESCENT
+
+sw_checklist:DESCENT:DESCENT
+sw_item:Descent Clearance OBTAIN|OBTAINED
+sw_item:.|.:sim/cockpit2/gauges/indicators/altitude_ft_pilot:<18000
+sw_item:Barometer SET|SET:sim/cockpit/misc/barometer_setting:29.92
+sw_item:Anti-Ice AS REQUIRED|CHECK
+sw_item:FMGS Approach Phase Activated|ACTIVATED
+sw_item:Terrain on ND AS REQUIRED|CHECK:sim/custom/terr_on_nd:0|1
+sw_item:.|10 Thousand Feet:sim/cockpit2/gauges/indicators/altitude_ft_pilot:<10000
+sw_item:Landing Lights ON|ON:sim/cockpit2/switches/landing_lights_on:>=1
+sw_item:Seatbelt Signs ON|ON:sim/cockpit/switches/fasten_seat_belts:1
+sw_item:Landing System AS REQUIRED|SET:sim/custom/xap/fcu/ils:1
+sw_remark:Engine Mode Selector IGNITION if standing water present or heavy precipitation
+sw_item:Terrain on ND AS REQUIRED|CHECK:sim/custom/terr_on_nd:0|1
+sw_continue:APPROACH
+
+sw_checklist:APPROACH:APPROACH
+sw_item:Speed SET|SET
+sw_itemvoid:  Set to green dot
+sw_item:.|Flaps 1:sim/custom/xap/flap_lvrpos:1
+sw_item:.|SPEED CHECK:sim/cockpit2/gauges/indicators/airspeed_kts_pilot:<240.0
+sw_item:.|Flaps 2:sim/custom/xap/flap_lvrpos:2
+sw_item:.|SPEED CHECK:sim/cockpit2/gauges/indicators/airspeed_kts_pilot:<205.0
+sw_item:Landing Gear DOWN|DOWN:sim/cockpit/switches/gear_handle_status:>0
+sw_item:Autobrake AS REQUIRED|SET:(sim/custom/xap/brakes/auto_low:1)||(sim/custom/xap/brakes/auto_med:1)||(sim/custom/xap/brakes/auto_max:1)
+sw_item:Nose Lights TAKEOFF|SET:sim/custom/xap/extlight/nose_sw:2
+sw_item:Turnoff Lights ON|ON:sim/custom/xap/extlight/rwyturn_sw:1
+sw_item:Ground Spoilers Armed|ARMED:sim/cockpit2/controls/speedbrake_ratio:<=-0.5
+sw_item:.|.:sim/flightmodel/movingparts/gear1def:>=1
+sw_item:SET Flaps 3|Flaps 3:sim/custom/xap/flap_lvrpos:3
+sw_item:.|SPEED CHECK:sim/cockpit2/gauges/indicators/airspeed_kts_pilot:<186.0
+sw_item:Wheel Page SELECT|SELECTED:sim/custom/xap/disp/sys/mode:11
+sw_item:Approach ACTIVATE on Localizer Intercept|ACTIVATED:sim/custom/xap/fcu/appr_bat:1
+sw_item:Autopilot AP2 AS REQUIRED|SET:sim/custom/xap/fcu/ap2:1
+sw_item:Go Around Altitude SET|SET
+sw_item:Autothrottle MANUAL or OFF|SET
+sw_item:Wing Anti-Ice OFF|OFF:sim/custom/xap/icerain/wing_knob:0
+sw_item:.|Flaps FULL:sim/cockpit2/controls/flap_ratio:1
+sw_item:.|SPEED CHECK:sim/cockpit2/gauges/indicators/airspeed_kts_pilot:<180.0
+sw_item:.|1 Thousand Feet, Missed Approach Altitude SET:sim/cockpit2/gauges/indicators/radio_altimeter_height_ft_pilot:<1000
+sw_item:Autopilot AS REQUIRED|SET:sim/custom/xap/fcu/ap1:0|1
+sw_continue:LANDING
+
+sw_checklist:LANDING:LANDING
+sw_item:.|.:sim/cockpit2/gauges/indicators/radio_altimeter_height_ft_pilot:<30
+sw_item:Thrust Levers IDLE|.:(sim/flightmodel/engine/ENGN_thro[0]:0.0)&&(sim/flightmodel/engine/ENGN_thro[1]:0.0)
+sw_item:.|.:sim/cockpit2/gauges/indicators/radio_altimeter_height_ft_pilot:<5
+sw_remark:Reverse & Spoilers
+sw_item:.|70 Knots:sim/cockpit2/gauges/indicators/airspeed_kts_pilot:<=70
+sw_item:Thrust Levers IDLE|IDLE:(sim/flightmodel/engine/ENGN_thro[0]:0.0)&&(sim/flightmodel/engine/ENGN_thro[1]:0.0)
+sw_item:Brake Fans ON|ON:sim/custom/xap/wheels/br_fun:1
+sw_item:Autobrake DISENGAGE:DISENGAGED(sim/custom/xap/brakes/auto_low:0)&&(sim/custom/xap/brakes/auto_med:0)||(sim/custom/xap/brakes/auto_max:0)
+sw_continue:AFTER LANDING
+
+sw_checklist:AFTER LANDING:AFTER LANDING
+sw_item:Ground Spoilers Retracted|RETRACTED:sim/cockpit2/controls/speedbrake_ratio:0.0
+sw_item:EXIT Runway|Clear of Runway
+sw_item:Landing Lights OFF|OFF:sim/cockpit2/switches/landing_lights_on:0
+sw_item:Nose Light TAXI|TAXI:sim/custom/xap/extlight/nose_sw:1
+sw_item:APU Battery ON|ON:sim/custom/xap/elec/bat3_on:1
+sw_item:APU Master ON|ON:sim/cockpit/engine/APU_switch:1
+sw_item:Weather Radar OFF|OFF:sim/cockpit/switches/EFIFS_shows_weather:0
+sw_item:Weather Windshear/PWS OFF|OFF:sim/custom/xap/wx_radar/windshear:1
+sw_item:Flaps RETRACT|RETRACTED:sim/cockpit2/controls/flap_handle_deploy_ratio:0.0
+sw_item:Transponder Mode STANDBY|STANDBY:sim/custom/xap/atc/ta_tara:0
+sw_item:APU Start ON|ON:sim/cockpit/engine/APU_running:1
+sw_item:Anti-Ice AS REQUIRED|CHECK
+sw_item:Brake Temperature CHECK|CHECK:sim/custom/xap/disp/sys/mode:11
+sw_continue:TAXI2
+
+sw_checklist:TAXI2:TAXI2
+sw_item:Terrain on ND OFF|OFF:sim/custom/terr_on_nd:0
+sw_item:Landing System OFF|OFF:sim/custom/xap/fcu/ils:0
+sw_item:Flight Director OFF|OFF:sim/cockpit2/annunciators/flight_director:0
+sw_item:Brake Fans ON|ON:sim/custom/xap/wheels/br_fun:1
+sw_item:Strobe Lights AS REQUIRED|SET:sim/custom/xap/extlight/strobe_sw:>0
+sw_continue:PARKING
+
+sw_checklist:PARKING:PARKING
+sw_item:Parking Brake ON|ON:sim/flightmodel/controls/parkbrake:1
+sw_item:Anti-Ice OFF|OFF:(sim/custom/xap/icerain/wing_knob:0)&&(sim/custom/xap/icerain/eng1_knob:0)&&(sim/custom/xap/icerain/eng2_knob:0)
+sw_item:APU Bleed ON|ON:sim/custom/xap/bleed/apu_blvlv:1
+sw_item:Engine 1 & 2 Master Switch OFF|OFF:(sim/custom/xap/engines/eng1msw:0.0)&&(sim/custom/xap/engines/eng2msw:0.0)
+sw_item:Seatbelt Signs OFF|OFF:sim/cockpit/switches/fasten_seat_belts:0
+sw_item:Beacon Light OFF|OFF:sim/custom/xap/extlight/beacon_sw:0
+sw_item:Strobe Lights AUTO|AUTO:sim/custom/xap/extlight/strobe_sw:1
+sw_item:Nose & Turnoff Lights OFF|OFF:(sim/custom/xap/extlight/nose_sw:0)&&(sim/custom/xap/extlight/rwyturn_sw:0)
+sw_item:Fuel Pumps OFF|OFF:(sim/custom/xap/fuel/pump/r1:0)&&(sim/custom/xap/fuel/pump/r2:0)&&(sim/custom/xap/fuel/pump/l1:0)&&(sim/custom/xap/fuel/pump/l2:0)
+sw_item:Ground Equipment CALL|CALLED
+sw_item:CALL GPU|CALLED:sim/custom/xap/elec/gpu_here:1
+sw_item:Wipers OFF|OFF:sim/cockpit2/switches/wiper_speed:0
+sw_item:GPU AVAIL|AVAIL:sim/custom/xap/elec/gpu_av:1
+sw_item:EXT Power A & B ON|ON:(sim/custom/xap/elec/gpu_onA:1)&&(sim/custom/xap/elec/gpu_onB:1)
+sw_item:Battery Voltage CHECK Above 25.5|CHECK:sim/custom/xap/elec/gpu_av:1
+sw_item:APU Bleed OFF|OFF:sim/custom/xap/bleed/apu_blvlv:0
+sw_item:APU Master OFF|OFF:sim/cockpit/engine/APU_running:0
+sw_item:AC Temperatures SET|SET:(sim/custom/xap/cond/fwd_knob:20|24)&&(sim/custom/xap/cond/ckpt_knob:20|24)
+sw_item:System Page CHECK|CHECK:sim/custom/xap/disp/sys/mode:15
+sw_item:OPEN Doors|OPENED:sim/custom/xap/doors/one_door_open:1
+sw_item:Brake Fans OFF|OFF:sim/custom/xap/wheels/br_fun:0
+
+sw_checklist:SECURING AIRCRAFT:SECURING AIRCRAFT
+sw_item:ADIRS Selectors OFF|OFF:(sim/custom/xap/adirs/mode_sel_1:0)&&(sim/custom/xap/adirs/mode_sel_2:0)&&(sim/custom/xap/adirs/mode_sel_3:0)
+sw_item:AC Packs OFF|OFF:(sim/custom/xap/cond/pack1:0)&&(sim/custom/xap/cond/pack2:0)
+sw_item:Probe Window Heat OFF|OFF:sim/cockpit/switches/anti_ice_window_heat:0
+sw_item:All Lights OFF|OFF:(sim/custom/xap/extlight/beacon_sw:0)&&(sim/custom/xap/extlight/strobe_sw:0)&&(sim/custom/xap/extlight/nose_sw:0)&&(sim/custom/xap/extlight/rwyturn_sw:0)&&(sim/cockpit2/switches/landing_lights_on:0)
+sw_item:APU Bleed OFF|OFF:sim/custom/xap/bleed/apu_blvlv:0
+sw_item:APU Master OFF|OFF:sim/cockpit/engine/APU_running:0
+sw_item:Radio Displays OFF|OFF:sim/custom/xap/radio/on:0
+sw_item:Emergency Lights OFF|OFF:sim/custom/xap/extlight/emer_ext_lt:0
+sw_item:Seatbelt Signs OFF|OFF:sim/cockpit/switches/fasten_seat_belts:0
+sw_item:No Smoking Sign OFF|OFF:sim/cockpit/switches/no_smoking:0
+sw_item:Exterior Power A & B OFF|OFF:(sim/custom/xap/elec/gpu_onA:0) && (sim/custom/xap/elec/gpu_onB:0)
+sw_item:Dismiss GPU|DISMISSED:sim/custom/xap/elec/gpu_here:0
+sw_item:Battery 1 OFF|OFF:(sim/custom/xap/elec/bat1_on:0) && (sim/cockpit/electrical/battery_on:0)
+sw_item:Battery 2 OFF|OFF:sim/custom/xap/elec/bat2_on:0
+sw_item:APU Battery OFF|OFF:sim/custom/xap/elec/bat3_on:0
