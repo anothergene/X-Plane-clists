@@ -1,0 +1,118 @@
+sw_checklist:757 and 767 MTOW and MLW:757 and 767 MTOW and MLW
+sw_rcolsize:100
+sw_itemvoid:Boeing 757-200
+sw_item:MTOW|116000 kgs (255736 lbs)
+sw_item:MLW|89900 kgs (198196 lbs)
+sw_itemvoid:Boeing 757-300
+sw_item:MTOW|124000 kgs (273373 lbs)
+sw_item:MLW|101600 kgs (223990 lbs)
+sw_itemvoid:Boeing 767-200ER
+sw_item:MTOW|179169 kgs (395000 lbs)
+sw_item:MLW|136078 kgs (300000 lbs)
+sw_itemvoid:Boeing 767-300
+sw_item:MTOW|159000 kgs (350535 lbs)
+sw_item:MLW|136078 kgs (300001 lbs)
+sw_itemvoid:Boeing 767-300ER
+sw_item:MTOW|187000 kgs (412264 lbs)
+sw_item:MLW|136080 kgs (300005 lbs)
+sw_continue
+
+sw_checklist:PREFLIGHT:PREFLIGHT
+sw_rcolsize:100
+sw_item:Oxygen|TESTED
+sw_item:Pressurization Mode Selector|AUTO
+sw_item:Flight instruments|SET
+sw_item:Parking brake|SET
+sw_item:Fuel control switches|CUTOFF
+sw_item:Gear pins|REMOVED
+sw_continue
+
+sw_checklist:BEFORE START:BEFORE START
+sw_rcolsize:100
+sw_item:Fuel|CHECKED
+sw_item:Passenger signs|SET
+sw_item:Windows|LOCKED
+sw_item:MCP|SET
+sw_item:Takeoff thrust|CHECKED
+sw_item:Takeoff speeds|CHECKED
+sw_item:CDU preflight|COMPLETED
+sw_item:Rudder and alieron trim|SET
+sw_item:Taxi and takeoff briefing|COMPLETE
+sw_item:Flight deck door|LOCKED
+sw_item:Red anti collision light|ON
+sw_continue
+
+sw_checklist:BEFORE TAXI:BEFORE TAXI
+sw_rcolsize:100
+sw_item:Anti-ice|AS REQUIRED
+sw_item:Isolation switch|OFF
+sw_item:Recall|CHECKED
+sw_item:Autobrake|RTO
+sw_item:Ground equipment|CLEAR
+sw_item:TAXI (RUNWAY TURNOFF) light switches|ON
+sw_continue
+
+sw_checklist:BEFORE TAKEOFF:BEFORE TAKEOFF
+sw_rcolsize:100
+sw_item:Takeoff briefing|REVIEWED
+sw_item:Packs|AUTO/OFF
+sw_item:Flaps|SET
+sw_item:Stabilizer Trim|SET
+sw_item:Flight controls|CHECKED
+sw_item:Cabin|SECURED
+sw_item:TAXI (RUNWAY TURNOFF) light switches|OFF
+sw_continue
+
+sw_checklist:AFTER TAKEOFF:AFTER TAKEOFF
+sw_rcolsize:100
+sw_item:Packs|AUTO
+sw_item:Landing gear|UP
+sw_item:Flaps|UP
+sw_item:Altimeters|SET
+sw_continue
+
+sw_checklist:DESCENT:DESCENT
+sw_rcolsize:100
+sw_item:Pressurization|LDG
+sw_item:Recall|CHECKED
+sw_item:Autobrake|SET
+sw_item:Landing data|Vref
+sw_item:Approach briefing|COMPLETED
+sw_continue
+
+sw_checklist:APPROACH:APPROACH
+sw_rcolsize:100
+sw_item:Altimeters|SET
+sw_item:Nav aids|SET
+sw_continue
+
+sw_checklist:LANDING:LANDING
+sw_rcolsize:100
+sw_item:Cabin|SECURED
+sw_item:Speedbrake|ARMED
+sw_item:Landing gear|DOWN
+sw_item:Flaps|SET
+sw_continue
+
+sw_checklist:SHUTDOWN:SHUTDOWN
+sw_rcolsize:100
+sw_item:Hydraulic panel|SET
+sw_item:Fuel pumps|SET
+sw_item:Flaps|UP
+sw_item:Parking brake|SET
+sw_item:Fuel control switches|CUTOFF
+sw_item:Weather radar|OFF
+sw_continue
+
+sw_checklist:SECURE:SECURE
+sw_rcolsize:100
+sw_item:IRSs|OFF
+sw_item:Emergency lights|OFF
+sw_item:Window heat|OFF
+sw_item:Packs|OFF
+sw_item:External power|SET
+sw_item:APU|OFF
+sw_item:Standby power selector|OFF
+sw_item:Battery|OFF
+sw_item:Ground service bus|CHECKED
+sw_continue
