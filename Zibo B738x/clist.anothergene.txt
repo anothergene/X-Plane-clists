@@ -71,7 +71,6 @@ sw_item_c:\white\GPU GROUND SERVICE\grey\, CONNECTED|SET:(laminar/B738/fmod/gpu_
 sw_item_c:\white\ASU GROUND SERVICE\grey\, CONNECTED|
 sw_item_c:\white\AC GROUND POWER\grey\, ON|SET:(sim/cockpit/electrical/gpu_amps:>0)&&(sim/operation/failures/rel_ex_power_on:0)
 sw_itemvoid_c:\grey\.............. IF NO GPU AVAILABLE
-sw_item_c:\white\AFT FUEL PUMP 1\grey\, ON|SET:(laminar/B738/fuel/fuel_tank_pos_lft1:1)
 sw_item_c:\white\APU\grey\, STARTED (1 MINUTE LOADLESS)|AS NEEDED:(sim/cockpit/engine/APU_running:1)||(sim/cockpit/electrical/gpu_amps:>0)&&(sim/operation/failures/rel_ex_power_on:0)||(sim/cockpit2/switches/navigation_lights_on:1)&&(sim/cockpit2/switches/strobe_lights_on:0)&&(sim/operation/failures/rel_lites_nav:0)
 sw_item_c:\white\MIDDLE APU GENERATORS\grey\, ON|AS NEEDED:(sim/cockpit2/electrical/APU_generator_on:1)&&(laminar/B738/electrical/apu_power_bus1:1)&&(laminar/B738/electrical/apu_power_bus2:1)&&(laminar/B738/annunciator/source_off1:0)&&(laminar/B738/annunciator/source_off2:0)||(sim/cockpit/electrical/gpu_amps:>0)&&(sim/operation/failures/rel_ex_power_on:0)||(sim/cockpit2/switches/navigation_lights_on:1)&&(sim/cockpit2/switches/strobe_lights_on:0)&&(sim/operation/failures/rel_lites_nav:0)
 ################################################################################################################
